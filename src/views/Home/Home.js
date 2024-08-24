@@ -1,6 +1,5 @@
 import React from 'react'
 import './home.css'
-import noteimg from './note.png'
 import { Link } from 'react-router-dom'
 import Featurecard from '../../components/Feature/Featurecard'
 import safeImg from './security.png'
@@ -9,10 +8,9 @@ import easy from './easy.png'
 
 const Home = () => {
   return (
-    <div className='home-container'>
+    <div className='main-container'>
           <div className='heading'>
             <span className='heading-txt'>Noteit !</span>
-            <img src={noteimg} className='heading-img'></img>
             <div className='tag-line'>note your day...</div>
           </div>
         <div className='btns-container'>
