@@ -16,8 +16,8 @@ const Home = () => {
             <div className='tag-line'>note your day...</div>
           </div>
         <div className='btns-container'>
-          <Link to='/add'><button className='bnt'>Add Note</button></Link>
-          <Link to='/show'><button className='bnt btn-sec'>Show Notes</button></Link>
+          <Link to='/add'><button className='bnt'>Add Note 📍</button></Link>
+          <Link to='/show'><button className='bnt btn-sec'>Show Notes 💌</button></Link>
         </div>
         <div className='feature-cards-container'>
            <Featurecard feature={'Very safe'} imgurl={safeImg}/>
