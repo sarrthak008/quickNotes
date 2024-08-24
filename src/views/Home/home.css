@@ -57,15 +57,13 @@
      }
 
 .heading-txt{
-    font-size: 3em;
+    font-size:25vw;
     font-weight: 900;
     white-space: nowrap;
 }
 
 .heading-img{
-    height: 50%;
-    top: 0px;
-    left:0px;
+    display: none;
 }
 .tag-line{
     font-size: 1em;
