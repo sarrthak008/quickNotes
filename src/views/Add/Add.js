@@ -10,23 +10,22 @@ const Add = () => {
   const [tittle , setTittle] = useState('')
   const [category,setcategory] =useState('ganral')
   const [description ,setdescription] = useState('')  
-   
   const [notes , setnotes]  = useState([])
+
+
+    // create toast messagegs...
+const notify = (Message,type) =>{
+  if(type==='e'){
+    toast.error(Message)
+  }else if(type === 's'){
+    toast.success(Message)
+  }
+}
  
   useEffect(()=>{
-     
   localStorage.setItem('allNotes',JSON.stringify(notes))
+  notify('your note add suessfully..','s')
   },[notes])
-
-
-  // create toast messagegs...
-const notify = (Message,type) =>{
-    if(type=='e'){
-      toast.error(Message)
-    }else if(type == 's'){
-      toast.success(Message)
-    }
-}
 
 // set localStorage
 const saveNotes=()=>{
@@ -43,7 +42,6 @@ const saveNotes=()=>{
        setTittle('')
        setcategory('')
        setdescription('')
-      console.log(notes)
     }
  }
 
