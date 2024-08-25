@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './add.css'
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -8,10 +8,16 @@ import toast, { Toaster } from 'react-hot-toast';
 const Add = () => {
 
   const [tittle , setTittle] = useState('')
-  const [category,setcategory] =useState('')
+  const [category,setcategory] =useState('ganral')
   const [description ,setdescription] = useState('')  
    
-  const notes =[]
+  const [notes , setnotes]  = useState([])
+ 
+  useEffect(()=>{
+     
+  localStorage.setItem('allNotes',JSON.stringify(notes))
+  },[notes])
+
 
   // create toast messagegs...
 const notify = (Message,type) =>{
@@ -23,7 +29,9 @@ const notify = (Message,type) =>{
 }
 
 // set localStorage
-
+const saveNotes=()=>{
+  setnotes([{tittle,category,description},...notes])
+}
 
 
 //add notes into localStorage....
@@ -31,7 +39,7 @@ const notify = (Message,type) =>{
     if(tittle.length <=0 && description.length <=0 && category.length==0 ){
       toast.error('please fill full add fields','e')
     }else{
-       notes.push({tittle,category,description})
+       saveNotes()
        setTittle('')
        setcategory('')
        setdescription('')
@@ -54,6 +62,7 @@ const notify = (Message,type) =>{
           <select placeholder="select the categary" className='form-inputs' onChange={(e)=>{
              setcategory(e.target.value)
           }}>
+             <option className='select'>ganral</option>
              <option className='select'>entarment</option>
              <option className='select'>study</option>
              <option className='select'>trip</option>
