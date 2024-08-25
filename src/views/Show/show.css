@@ -1,0 +1,34 @@
+
+.categories{
+    height: 7vh;
+    width: 100vw;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin-top: 4vh;
+    padding-bottom: -4px;  
+}
+.categories::-webkit-scrollbar{
+ display: none;
+}
+
+.category-iteam{
+  height: 85%;
+  width:180px;
+  display: inline-block;
+  margin:auto 20px;
+  text-align: center;
+  cursor: pointer;
+  font-size:25px;
+  padding-top: 2px;
+  border: 3px solid #9def22;
+  border-radius: 4px;
+  &:hover{
+    background-color: #9def22;
+    color: black;
+  }
+}
+
+.category-iteam:hover.category-iteam i{
+    color: black;
+}
