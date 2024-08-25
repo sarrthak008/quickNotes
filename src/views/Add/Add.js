@@ -1,11 +1,45 @@
 import React, { useState } from 'react'
 import './add.css'
+import toast, { Toaster } from 'react-hot-toast';
+
+
+
 
 const Add = () => {
 
   const [tittle , setTittle] = useState('')
   const [category,setcategory] =useState('')
-  
+  const [description ,setdescription] = useState('')  
+   
+  const notes =[]
+
+  // create toast messagegs...
+const notify = (Message,type) =>{
+    if(type=='e'){
+      toast.error(Message)
+    }else if(type == 's'){
+      toast.success(Message)
+    }
+}
+
+// set localStorage
+
+
+
+//add notes into localStorage....
+ const addNotes=()=>{
+    if(tittle.length <=0 && description.length <=0 && category.length==0 ){
+      toast.error('please fill full add fields','e')
+    }else{
+       notes.push({tittle,category,description})
+       setTittle('')
+       setcategory('')
+       setdescription('')
+      console.log(notes)
+    }
+ }
+
+
   return (
     <div className='main-container'>
       <div className='heading-txt add-heading'>new <span className='text-heighlight'>note</span></div>
@@ -25,12 +59,20 @@ const Add = () => {
              <option className='select'>trip</option>
              <option className='select'>shopping</option>
           </select>
-          <textarea className='form-inputs txt-area' placeholder='enter the description'></textarea>
+          <textarea className='form-inputs txt-area' placeholder='enter the description' value={description}  onChange={(e)=>{
+             setdescription(e.target.value)
+          }}></textarea>
+         
           <div className='btns'>
-            <button className='bnt '>Add Note</button>
+            <button className='bnt' onClick={()=>{
+              addNotes()
+            }}>Add Note</button>
+
              <button className='bnt btn-sec' onClick={()=>{
                 setTittle('')
                 setcategory('')
+                setdescription('')
+                notify('clear successfully','s')
              }}>clear</button>
         </div>
       </div>
