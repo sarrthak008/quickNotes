@@ -13,8 +13,8 @@
 }
 
 .category-iteam{
-  height: 85%;
   width:180px;
+  padding:4px 5px;
   display: inline-block;
   margin:auto 20px;
   text-align: center;
