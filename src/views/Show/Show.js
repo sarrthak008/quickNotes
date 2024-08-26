@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'remixicon/fonts/remixicon.css'
 import './show.css'
 
 const Show = () => {
+
+  const [showtype , setshowtype] = useState('ganral')
+
   return (
     <div className='main-container'>
       <div className='heading-txt add-heading'>your <span className='text-heighlight'>notes</span></div>
@@ -14,6 +17,7 @@ const Show = () => {
          <span className='category-iteam'>entertment <i class="ri-tv-line"></i></span>
          <span className='category-iteam'>trip <i class="ri-bus-line"></i></span>
       </div>
+      
     </div>
   )
 }

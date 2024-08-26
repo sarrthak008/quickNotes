@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './add.css'
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 
 
@@ -8,10 +8,8 @@ import toast, { Toaster } from 'react-hot-toast';
 const Add = () => {
 
   const [tittle, setTittle] = useState('')
-  const [category, setcategory] = useState('ganral')
+  const [category, setcategory] = useState('')
   const [description, setdescription] = useState('')
-  const [notes, setnotes] = useState([])
-
 
   // create toast messagegs...
   const notify = (Message, type) => {
@@ -22,26 +20,19 @@ const Add = () => {
     }
   }
 
-  useEffect(() => {
-    localStorage.setItem('allNotes', JSON.stringify(notes))
-    notify('your note add suessfully..', 's')
-  }, [notes])
-
-  // set localStorage
-  const saveNotes = () => {
-    setnotes([{ tittle, category, description }, ...notes])
-  }
-
 
   //add notes into localStorage....
   const addNotes = () => {
     if (tittle.length <= 0 && description.length <= 0 && category === '') {
       toast.error('please fill full add fields', 'e')
     } else {
-      saveNotes()
-      setTittle('')
-      setcategory('')
-      setdescription('')
+       let Notes = JSON.parse(localStorage.getItem('Notes')) || []
+       Notes.push({tittle,description,category})
+       localStorage.setItem('Notes',JSON.stringify(Notes))
+       setTittle('')
+       setcategory('')
+       setdescription('')
+       notify('add note successfully...','s')
     }
   }
 
@@ -57,14 +48,15 @@ const Add = () => {
           value={tittle} onChange={(e) => {
             setTittle(e.target.value)
           }}></input>
-        <select placeholder="select the categary" className='form-inputs' onChange={(e) => {
+        <select placeholder="select the categary" className='form-inputs' value={category}  onChange={(e) => {
           setcategory(e.target.value)
         }}>
-          <option className='select'>ganral</option>
-          <option className='select'>entarment</option>
-          <option className='select'>study</option>
-          <option className='select'>trip</option>
-          <option className='select'>shopping</option>
+          <option>select categary</option>
+          <option className='select' value='ganral'>ganral</option>
+          <option className='select' value='entertment'>entarment</option>
+          <option className='select' value='study'>study</option>
+          <option className='select' value='trip'>trip</option>
+          <option className='select' value='shoping'>shopping</option>
         </select>
         <textarea className='form-inputs txt-area' placeholder='enter the description' value={description} onChange={(e) => {
           setdescription(e.target.value)
