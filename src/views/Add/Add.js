@@ -73,14 +73,14 @@ const Add = () => {
         <div className='btns'>
           <button className='bnt' onClick={() => {
             addNotes()
-          }}>Add Note</button>
+          }}>Add Note ➕</button>
 
           <button className='bnt btn-sec' onClick={() => {
             setTittle('')
             setcategory('')
             setdescription('')
             notify('clear successfully', 's')
-          }}>clear</button>
+          }}>clear 🚮</button>
         </div>
       </div>
 
