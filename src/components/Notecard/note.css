@@ -1,18 +1,73 @@
 .note-body{
   height: 200px;
-  width: 350px;
+  width: 250px;
   margin: auto 0;
-  background: linear-gradient(#03ff03d9,black);
+  background: linear-gradient(to top,#064406d9,black);
   border-radius: 7px;
-  display: flex;
   flex-direction: column;
+  display: inline-block;
+  margin-left: 50px;
+  position: relative;
+  overflow: hidden;
+  padding:2px 6px;
+  backdrop-filter: blur( 10.5px );
+
+
+}
+.note-body::-webkit-scrollbar{
+  display: none;
 }
 .note-tittle{
-  font-size: 50px;
-  color: black;
+  font-size: 40px;
+  color: #fffefe;
   font-weight: 400;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  text-wrap: wrap;
 }
 .note-desciption{
-  color: white;
-  font-size: 20px;
+  color:whitesmoke;
+  font-size: 19px;
+  text-wrap: wrap;
+  text-align: center;
+  margin-top: 10px;
+  display: block;
+}
+
+.remove-note{
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 25px;
+  color: black;
+}
+.remove-note i{
+  color: #00ff00;
+}
+
+.overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.overlay::-webkit-scrollbar{
+  display: none;
+}
+
+.note-img{
+  height: 150%;
+  position: fixed;
+  pointer-events: none;
+  top:1;
+  filter: brightness(0.4);
 }

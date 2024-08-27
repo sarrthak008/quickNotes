@@ -14,16 +14,9 @@ const Show = () => {
     <div className='main-container'>
       <div className='heading-txt add-heading'>your <span className='text-heighlight'>notes</span></div>
       <p className='tag-line '>see your all saved notes !</p>
-      <div className='categories'>
-         <span className='category-iteam' onClick={()=>setshowtype('ganral')}>ganral <i class="ri-home-line"></i></span>
-         <span className='category-iteam' onClick={()=>setshowtype('study')}>study <i class="ri-book-open-line"></i></span>
-         <span className='category-iteam' onClick={()=>setshowtype('shopping')}>shopping <i class="ri-shopping-bag-line"></i></span>
-         <span className='category-iteam' onClick={()=>{setshowtype('entertment')}}>entertment <i class="ri-tv-line"></i></span>
-         <span className='category-iteam' onClick={()=>setshowtype('trip')}>trip <i class="ri-bus-line"></i></span>
-      </div>
        <div className='notes-container'>
            {Notes.map((note)=>(
-              <NoteCrad note={note} type={showtype}/>
+              <NoteCrad note={note}/>
            ))}
        </div>
     </div>
