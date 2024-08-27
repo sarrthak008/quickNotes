@@ -1,0 +1,18 @@
+.note-body{
+  height: 200px;
+  width: 350px;
+  margin: auto 0;
+  background: linear-gradient(#03ff03d9,black);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+}
+.note-tittle{
+  font-size: 50px;
+  color: black;
+  font-weight: 400;
+}
+.note-desciption{
+  color: white;
+  font-size: 20px;
+}

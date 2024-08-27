@@ -32,3 +32,21 @@
 .category-iteam:hover.category-iteam i{
     color: black;
 }
+
+.notes-container{
+  height: 50vh;
+  width: 100vw;
+  background:;
+  margin-top: 5vh;
+  color: aliceblue;
+  white-space:nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.notes-container::-webkit-scrollbar{
+  display: none;
+}
