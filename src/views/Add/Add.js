@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './add.css'
 import toast from 'react-hot-toast';
-
+import PagesLinkIcon from '../../components/PageslinkIcon/PagesLinkIcon';
 
 
 
@@ -76,7 +76,7 @@ const Add = () => {
         </div>
       </div>
 
-
+    <PagesLinkIcon/>
     </div>
   )
 

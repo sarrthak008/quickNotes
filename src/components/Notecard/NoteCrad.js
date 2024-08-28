@@ -23,8 +23,8 @@ const NoteCrad = ({note,index}) => {
   
    }
 
-   
    const [popupStatus,setpopupStatus] =useState(false)
+   const [isComplete,setIscomplete] =useState(false)
 
     return(
      
@@ -33,8 +33,9 @@ const NoteCrad = ({note,index}) => {
           <div className='overlay'>
                <span className='note-tittle'>{note.tittle}</span><br></br>
                <span className='note-desciption'>{note.description}</span>
+               {isComplete ?<span className='is-done'><i class="ri-check-double-fill"></i></span>:null}
                <div className='remove-note' onClick={()=>setpopupStatus(true)}><i class="ri-more-fill"></i></div>
-               {popupStatus ? <Popup status={setpopupStatus} index={index}/> : null}
+               {popupStatus ? <Popup status={setpopupStatus} index={index} isComplete={setIscomplete}/> : null}
           </div>
        </div>
     )

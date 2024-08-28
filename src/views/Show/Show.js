@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import 'remixicon/fonts/remixicon.css'
 import './show.css'
 import NoteCrad from '../../components/Notecard/NoteCrad'
+import PagesLinkIcon from '../../components/PageslinkIcon/PagesLinkIcon'
 
 const Show = () => {
   
@@ -17,6 +18,7 @@ const Show = () => {
               <NoteCrad note={note} index={index}/>
            ))}
        </div>
+      <PagesLinkIcon/>
     </div>
   )
 }

@@ -78,3 +78,23 @@
   top: 0;
   position: fixed;
 }
+.is-done{
+  position: absolute;
+  top: 0;
+  left:5px;
+  font-size: 30px;
+  font-weight: 900;
+  color: greenyellow;
+}
+.is-done i{
+  color: #06ff06;
+  animation:glow 2s ease-in infinite;
+}
+@keyframes glow {
+   0%{
+     color: green;
+   }100%{
+    color: #00ff00;
+   }
+} 
+
