@@ -6,7 +6,6 @@
   margin-top: 10vh;
   color: aliceblue;
   white-space:nowrap;
-  overflow-y: hidden;
   overflow-x: scroll;
   position: absolute;
   top: 50%;
@@ -16,4 +15,13 @@
 
 .notes-container::-webkit-scrollbar{
   display: none;
+}
+.popup{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #73737386;
+  backdrop-filter: blur(9px);
 }
